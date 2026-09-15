@@ -1,0 +1,5 @@
+{
+    "javadoc-tools.generateJavadoc.workspaceSourceFolder": "src",
+    "javadoc-tools.generateJavadoc.targetFolder": "${WorkspaceRoot}/javadoc",
+    "javadoc-tools.generateJavadoc.isUsingPwsh": true
+}
