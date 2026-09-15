@@ -1,206 +1,85 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
 public class GameBoardFull extends GameBoard {
+
+    private static final String PURPLE = "purple";
+    private static final String AQUA = "aqua";
+    private static final String FUCHSIA = "fuchsia";
+    private static final String MAROON = "maroon";
+    private static final String RED = "red";
+    private static final String YELLOW = "yellow";
+    private static final String GREEN = "green";
+    private static final String BLUE = "blue";
+
+    /**
+     * Constructs a full game board with all standard Monopoly cells and cards initialized.
+     */
     public GameBoardFull() {
         super();
-        PropertyCell dp1 = new PropertyCell();
+
         CardCell cc1 = new CardCell(Card.TYPE_CC, "Community Chest 1");
-        PropertyCell dp2 = new PropertyCell();
-        PropertyCell dp3 = new PropertyCell();
-        RailRoadCell rr1 = new RailRoadCell();
-        PropertyCell lb1 = new PropertyCell();
-        CardCell c1 = new CardCell(Card.TYPE_CHANCE, "Chance 1");
-        PropertyCell lb2 = new PropertyCell();
-        PropertyCell lb3 = new PropertyCell();
-        JailCell jail = new JailCell();
-        PropertyCell p1 = new PropertyCell();
-        UtilityCell u1 = new UtilityCell();
-        PropertyCell p2 = new PropertyCell();
-        PropertyCell p3 = new PropertyCell();
-        RailRoadCell rr2 = new RailRoadCell();
-        PropertyCell o1 = new PropertyCell();
         CardCell cc2 = new CardCell(Card.TYPE_CC, "Community Chest 2");
-        PropertyCell o2 = new PropertyCell();
-        PropertyCell o3 = new PropertyCell();
-        FreeParkingCell fp = new FreeParkingCell();
-        PropertyCell r1 = new PropertyCell();
-        CardCell c2 = new CardCell(Card.TYPE_CHANCE, "Chance 2");
-        PropertyCell r2 = new PropertyCell();
-        PropertyCell r3 = new PropertyCell();
-        RailRoadCell rr3 = new RailRoadCell();
-        PropertyCell y1 = new PropertyCell();
-        PropertyCell y2 = new PropertyCell();
-        UtilityCell u2 = new UtilityCell();
-        PropertyCell y3 = new PropertyCell();
-        GoToJailCell goToJail = new GoToJailCell();
-        PropertyCell g1 = new PropertyCell();
-        PropertyCell g2 = new PropertyCell();
         CardCell cc3 = new CardCell(Card.TYPE_CC, "Community Chest 3");
-        PropertyCell g3 = new PropertyCell();
-        RailRoadCell rr4 = new RailRoadCell();
+        CardCell c1 = new CardCell(Card.TYPE_CHANCE, "Chance 1");
+        CardCell c2 = new CardCell(Card.TYPE_CHANCE, "Chance 2");
         CardCell c3 = new CardCell(Card.TYPE_CHANCE, "Chance 3");
-        PropertyCell db1 = new PropertyCell();
-        PropertyCell db2 = new PropertyCell();
-        PropertyCell db3 = new PropertyCell();
-        
+        FreeParkingCell fp = new FreeParkingCell();
+        GoToJailCell goToJail = new GoToJailCell();
+        JailCell jail = new JailCell();
+        RailRoadCell rr1 = new RailRoadCell();
+        RailRoadCell rr2 = new RailRoadCell();
+        RailRoadCell rr3 = new RailRoadCell();
+        RailRoadCell rr4 = new RailRoadCell();
+        UtilityCell u1 = new UtilityCell();
+        UtilityCell u2 = new UtilityCell();
 
-        dp1.setPrice(60);
-        dp1.setColorGroup("purple");
-        dp1.setHousePrice(50);
-        dp1.setName("Mediterranean Avenue");
-        dp1.setRent(2);
-        
-        dp2.setPrice(60);
-        dp2.setColorGroup("purple");
-        dp2.setHousePrice(50);
-        dp2.setName("Baltic Avenue");
-        dp2.setRent(4);
-        
-        dp3.setPrice(60);
-        dp3.setColorGroup("purple");
-        dp3.setHousePrice(50);
-        dp3.setName("Sarah Avenue");
-        dp3.setRent(4);
-        
-        lb1.setPrice(100);
-        lb1.setColorGroup("aqua");
-        lb1.setHousePrice(50);
-        lb1.setName("Oriental Avenue");
-        lb1.setRent(6);
 
-        lb2.setPrice(100);
-        lb2.setColorGroup("aqua");
-        lb2.setHousePrice(50);
-        lb2.setName("Vermont Avenue");
-        lb2.setRent(6);
+        PropertyCell dp1 = createPropertyCell(60, PURPLE, 50, "Mediterranean Avenue", 2);
+        PropertyCell dp2 = createPropertyCell(60, PURPLE, 50, "Baltic Avenue", 4);
+        PropertyCell dp3 = createPropertyCell(60, PURPLE, 50, "Sarah Avenue", 4);
 
-        lb3.setPrice(120);
-        lb3.setColorGroup("aqua");
-        lb3.setHousePrice(50);
-        lb3.setName("Connecticut Avenue");
-        lb3.setRent(8);
-        
-        p1.setPrice(140);
-        p1.setColorGroup("fuchsia");
-        p1.setHousePrice(100);
-        p1.setName("St. Charles Place");
-        p1.setRent(10);
-        
-        p2.setPrice(140);
-        p2.setColorGroup("fuchsia");
-        p2.setHousePrice(100);
-        p2.setName("States Avenue");
-        p2.setRent(10);
-        
-        p3.setPrice(160);
-        p3.setColorGroup("fuchsia");
-        p3.setHousePrice(100);
-        p3.setName("Virginia Avenue");
-        p3.setRent(12);
-        
-        o1.setPrice(180);
-        o1.setColorGroup("maroon");
-        o1.setHousePrice(100);
-        o1.setName("St. James Avenue");
-        o1.setRent(14);
-        
-        o2.setPrice(180);
-        o2.setColorGroup("maroon");
-        o2.setHousePrice(100);
-        o2.setName("Tennessee Avenue");
-        o2.setRent(14);
-        
-        o3.setPrice(200);
-        o3.setColorGroup("maroon");
-        o3.setHousePrice(100);
-        o3.setName("New York Avenue");
-        o3.setRent(16);
-        
-        r1.setPrice(220);
-        r1.setColorGroup("red");
-        r1.setHousePrice(150);
-        r1.setName("Kentucky Avenue");
-        r1.setRent(18);
-        
-        r2.setPrice(220);
-        r2.setColorGroup("red");
-        r2.setHousePrice(150);
-        r2.setName("Indiana Avenue");
-        r2.setRent(18);
-        
-        r3.setPrice(240);
-        r3.setColorGroup("red");
-        r3.setHousePrice(150);
-        r3.setName("Illinois Avenue");
-        r3.setRent(20);
-        
-        y1.setPrice(260);
-        y1.setColorGroup("yellow");
-        y1.setHousePrice(150);
-        y1.setName("Atlantic Avenue");
-        y1.setRent(22);
-        
-        y2.setPrice(260);
-        y2.setColorGroup("yellow");
-        y2.setHousePrice(150);
-        y2.setName("Ventnor Avenue");
-        y2.setRent(22);
-        
-        y3.setPrice(280);
-        y3.setColorGroup("yellow");
-        y3.setHousePrice(150);
-        y3.setName("Marvin Gardens");
-        y3.setRent(24);
-        
-        g1.setPrice(300);
-        g1.setColorGroup("green");
-        g1.setHousePrice(200);
-        g1.setName("Pacific Avenue");
-        g1.setRent(26);
-        
-        g2.setPrice(300);
-        g2.setColorGroup("green");
-        g2.setHousePrice(200);
-        g2.setName("North Carolina Avenue");
-        g2.setRent(26);
-        
-        g3.setPrice(320);
-        g3.setColorGroup("green");
-        g3.setHousePrice(200);
-        g3.setName("Pennsylvania Avenue");
-        g3.setRent(28);
-        
-        db1.setPrice(350);
-        db1.setColorGroup("blue");
-        db1.setHousePrice(200);
-        db1.setName("Park Place");
-        db1.setRent(35);
-        
-        db2.setPrice(350);
-        db2.setColorGroup("blue");
-        db2.setHousePrice(200);
-        db2.setName("Dright Place");
-        db2.setRent(35);
-        
-        db3.setPrice(400);
-        db3.setColorGroup("blue");
-        db3.setHousePrice(200);
-        db3.setName("Boardwalk");
-        db3.setRent(50);
-        
+        PropertyCell lb1 = createPropertyCell(100, AQUA, 50, "Oriental Avenue", 6);
+        PropertyCell lb2 = createPropertyCell(100, AQUA, 50, "Vermont Avenue", 6);
+        PropertyCell lb3 = createPropertyCell(120, AQUA, 50, "Connecticut Avenue", 8);
+
+        PropertyCell p1 = createPropertyCell(140, FUCHSIA, 100, "St. Charles Place", 10);
+        PropertyCell p2 = createPropertyCell(140, FUCHSIA, 100, "States Avenue", 10);
+        PropertyCell p3 = createPropertyCell(160, FUCHSIA, 100, "Virginia Avenue", 12);
+
+        PropertyCell o1 = createPropertyCell( 180, MAROON, 100, "St. James Avenue", 14);
+        PropertyCell o2 = createPropertyCell(180, MAROON, 100, "Tennessee Avenue", 14);
+        PropertyCell o3 = createPropertyCell(200, MAROON, 100, "New York Avenue", 16);
+
+        PropertyCell r1 = createPropertyCell(220, RED, 150, "Kentucky Avenue", 18);
+        PropertyCell r2 = createPropertyCell(220, RED, 150, "Indiana Avenue", 18);
+        PropertyCell r3 = createPropertyCell(240, RED, 150, "Illinois Avenue", 20);
+
+        PropertyCell y1 = createPropertyCell(260, YELLOW, 150, "Atlantic Avenue", 22);
+        PropertyCell y2 = createPropertyCell(260, YELLOW, 150, "Ventnor Avenue", 22);
+        PropertyCell y3 = createPropertyCell(280, YELLOW, 150, "Marvin Gardens", 24);
+
+        PropertyCell g1 = createPropertyCell(300, GREEN, 200, "Pacific Avenue", 26);
+        PropertyCell g2 = createPropertyCell(300, GREEN, 200, "North Carolina Avenue", 26);
+        PropertyCell g3 = createPropertyCell(320, GREEN, 200, "Pennsylvania Avenue", 28);
+
+        PropertyCell db1 = createPropertyCell(350, BLUE, 200, "Park Place", 35);
+        PropertyCell db2 = createPropertyCell(350, BLUE, 200, "Dright Place", 35);
+        PropertyCell db3 = createPropertyCell(400, BLUE, 200, "Boardwalk", 50);
+
+
         RailRoadCell.setBaseRent(50);
         RailRoadCell.setPrice(200);
-        
+
         rr1.setName("Reading Railroad");
         rr2.setName("Pennsylvania Railroad");
         rr3.setName("B. & O. RailRoad");
         rr4.setName("Short Line");
-        
+
         UtilityCell.setPrice(150);
-        
+
         u1.setName("Electric Company");
         u2.setName("Water Works");
-        
+
         addCell(dp1);
         addCell(cc1);
         addCell(dp2);
@@ -240,7 +119,7 @@ public class GameBoardFull extends GameBoard {
         addCell(db1);
         addCell(db2);
         addCell(db3);
-        
+
         addCard(new MoneyCard("Win $50", 50, Card.TYPE_CC));
         addCard(new MoneyCard("Win $20", 20, Card.TYPE_CC));
         addCard(new MoneyCard("Win $10", 10, Card.TYPE_CC));
@@ -257,5 +136,26 @@ public class GameBoardFull extends GameBoard {
         addCard(new MoneyCard("Lose $50", -50, Card.TYPE_CHANCE));
         addCard(new JailCard(Card.TYPE_CHANCE));
         addCard(new MovePlayerCard("Illinois Avenue", Card.TYPE_CHANCE));
+    }
+
+    /**
+     * Creates and initializes a property cell with specified price, color group, house price, name, and rent.
+     * @param price the purchase price of the property
+     * @param colorGroup the color group the property belongs to
+     * @param housePrice the cost to build a house on the property
+     * @param name the name of the property
+     * @param rent the rent charged for landing on the property
+     * @return the initialized PropertyCell object
+     */
+    private PropertyCell createPropertyCell(int price, String colorGroup, int housePrice, String name, int rent) {
+        PropertyCell property = new PropertyCell();
+
+        property.setPrice(price);
+        property.setColorGroup(colorGroup);
+        property.setHousePrice(housePrice);
+        property.setName(name);
+        property.setRent(rent);
+
+        return property;
     }
 }

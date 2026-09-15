@@ -98,16 +98,24 @@ public class GameBoard {
 			new PropertyCell[getPropertyNumberForColor(color)];
 		int counter = 0;
 		for (int i = 0; i < getCellNumber(); i++) {
-			Cell c = getCell(i);
-			if(c instanceof PropertyCell) {
-				PropertyCell pc = (PropertyCell)c;
-				if(pc.getColorGroup().equals(color)) {
-					monopolyCells[counter] = pc;
-					counter++;
-				}
+			Cell cell = getCell(i);
+			if(isPropertyInColorGroup(cell, color)) {
+				monopolyCells[counter] = (PropertyCell) cell;
+				counter++;	
 			}
 		}
 		return monopolyCells;
+	}
+
+	/**
+	 * Determines if a cell is a property in the specified color group.
+	 * @param cell the Cell to check
+	 * @param color the color group name
+	 * @return true if the cell is a PropertyCell in the given color group; otherwise false
+	 */
+	private boolean isPropertyInColorGroup(Cell cell, String color) {
+    	return cell instanceof PropertyCell
+        	&& ((PropertyCell) cell).getColorGroup().equals(color);
 	}
 	
 	/**
